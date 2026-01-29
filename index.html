@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CURIO</title>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <style>
+    body{margin:0;font-family:system-ui,Arial;background:#0b0f19;color:#fff}
+    .wrap{width:min(1100px,95vw);margin:0 auto;padding:22px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:14px 16px;border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;background:rgba(18,26,43,.7);backdrop-filter:blur(10px)
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:52px;height:52px;border-radius:16px;
+      background:linear-gradient(135deg,#4f46e5,#1c2942);
+      display:grid;place-items:center;font-weight:900;font-size:22px;
+      border:1px solid rgba(255,255,255,.15)
+    }
+    .title{font-size:20px;font-weight:900;letter-spacing:.2px}
+    .sub{font-size:13px;opacity:.75;margin-top:2px}
+    .badges{display:flex;flex-wrap:wrap;gap:8px}
+    .badge{
+      padding:7px 10px;border-radius:999px;font-size:12.5px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(28,41,66,.55)
+    }
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:16px}
+    .card{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;background:rgba(18,26,43,.7);overflow:hidden
+    }
+    .card .head{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.10);font-weight:800}
+    .card .body{padding:14px 16px;opacity:.85;line-height:1.5}
+    iframe{width:100%;height:680px;border:0}
+    df-messenger{display:block !important;width:100% !important;height:680px !important}
+    df-messenger-launcher{display:none !important}
+    body > df-messenger{display:none !important}
+    .card df-messenger{display:block !important}
+    .btn{
+      display:inline-block;margin-top:10px;padding:9px 12px;border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);background:rgba(79,70,229,.85);
+      color:#fff;text-decoration:none;font-weight:700
+    }
+    .tips{margin:0;padding-left:18px}
+    footer{opacity:.6;font-size:12px;margin-top:14px;text-align:center}
+    .faq-item{margin-bottom:12px;padding-bottom:12px}
+    .faq-question{cursor:pointer;font-weight:700;color:#4f46e5;padding:8px;border-radius:6px;transition:all .2s;user-select:none}
+    .faq-question:hover{background:rgba(79,70,229,.15)}
+    .faq-answer{color:#e0e0e0;font-size:14px;line-height:1.5}
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      iframe{height:620px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">?</div>
+        <div>
+          <div class="title">CURIO</div>
+          <div class="sub">Ask “Why can’t…? or Why not?” or type <b>examples</b>.</div>
+        </div>
+      </div>
+      <div class="badges">
+        <div class="badge">2000+ Q&A</div>
+        <div class="badge">Physics</div>
+        <div class="badge">Biology</div>
+        <div class="badge">AI/Tech + Code</div>
+        <div class="badge">Privacy</div>
+        <div class="badge">Stress help</div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Left: Tips & Features -->
+      <div class="card">
+        <div class="head">✨ Features & Tips</div>
+        <div class="body" style="max-height:680px;overflow-y:auto;">
+          <p style="margin-bottom:14px;"><b>🎯 How to Get Better Answers:</b></p>
+          <ul class="tips">
+            <li>Be specific with your question</li>
+            <li>Ask one thing at a time</li>
+            <li>Use "Why can't...?" format</li>
+            <li>Keep it clear and short</li>
+          </ul>
+
+          <p style="margin-top:16px;margin-bottom:14px;"><b>📚 What We Know:</b></p>
+          <ul class="tips">
+            <li>Physics & Spaces</li>
+            <li>Biology & Life Science</li>
+            <li>Python & JavaScript</li>
+            <li>Data Privacy & Security</li>
+            <li>Study & Stress Management</li>
+            <li>General Knowledge</li>
+          </ul>
+
+          <p style="margin-top:16px;margin-bottom:14px;"><b>⚡ Quick Tips:</b></p>
+          <ul class="tips">
+            <li>Type "examples" to get ideas</li>
+            <li>Ask follow-up questions</li>
+            <li>Request code examples</li>
+            <li>Ask for explanations</li>
+          </ul>
+
+          <div style="background:rgba(79,70,229,.1);border:1px solid rgba(79,70,229,.3);border-radius:8px;padding:10px;margin-top:16px;font-size:13px;">
+            <b>💡 Tip:</b> Try asking "Why can't we hear in space?" from the challenges on the right!
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: About + quick prompts -->
+      <div class="card">
+        <div class="head">How to Use CURIO</div>
+        <div class="body">
+          <p><b>Type examples to get starter questions</b></p>
+          
+          <p>Ask in this style: <b>"Why can't…?"</b> / <b>"Why not…?"</b></p>
+          <p>You can also ask:</p>
+          <ul class="tips" style="margin-bottom:12px;">
+            <li>AI/Tech + code</li>
+            <li>privacy</li>
+            <li>study stress</li>
+            <li>fun questions</li>
+          </ul>
+
+          <p style="margin-top:14px;margin-bottom:8px;"><b>Quick Challenges (try these):</b></p>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div class="quick-prompt" style="padding:8px 12px;background:rgba(79,70,229,.2);border-radius:8px;cursor:pointer;border:1px solid rgba(79,70,229,.4);transition:all .2s;">Why can't we hear in space?</div>
+            <div class="quick-prompt" style="padding:8px 12px;background:rgba(79,70,229,.2);border-radius:8px;cursor:pointer;border:1px solid rgba(79,70,229,.4);transition:all .2s;">Why can't humans live 150+ years?</div>
+            <div class="quick-prompt" style="padding:8px 12px;background:rgba(79,70,229,.2);border-radius:8px;cursor:pointer;border:1px solid rgba(79,70,229,.4);transition:all .2s;">What is data privacy?</div>
+            <div class="quick-prompt" style="padding:8px 12px;background:rgba(79,70,229,.2);border-radius:8px;cursor:pointer;border:1px solid rgba(79,70,229,.4);transition:all .2s;">Python for loop example</div>
+            <div class="quick-prompt" style="padding:8px 12px;background:rgba(79,70,229,.2);border-radius:8px;cursor:pointer;border:1px solid rgba(79,70,229,.4);transition:all .2s;">Why can't homework do itself?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dialogflow Messenger -->
+    <div class="card" style="margin-top:16px;">
+      <div class="head">Chat with CURIO</div>
+      <div style="padding:16px;background:rgba(18,26,43,.5);border-radius:12px;">
+        <df-messenger
+          chat-icon="https://www.shutterstock.com/image-vector/chat-bot-icon-virtual-smart-600nw-2478937555.jpg"
+          intent="WELCOME"
+          chat-title="CURIO"
+          agent-id="c75fdb36-fc11-45f2-9636-84c678035aee"
+          language-code="en"
+        ></df-messenger>
+      </div>
+    </div>
+
+    <footer>Built using Dialogflow + Knowledge Base CSV library.</footer>
+  </div>
+
+  <script>
+    // Add click handlers to quick prompt buttons
+    document.querySelectorAll('.quick-prompt').forEach(prompt => {
+      prompt.addEventListener('click', function() {
+        const text = this.textContent.trim();
+        // Send message to DialogFlow messenger
+        const event = new CustomEvent('dcMessengerSendMessage', { detail: { message: text } });
+        const dfMessenger = document.querySelector('df-messenger');
+        if (dfMessenger) {
+          dfMessenger.send(text);
+        }
+      });
+      
+      prompt.addEventListener('mouseover', function() {
+        this.style.background = 'rgba(79,70,229,.35)';
+        this.style.borderColor = 'rgba(79,70,229,.6)';
+      });
+      
+      prompt.addEventListener('mouseout', function() {
+        this.style.background = 'rgba(79,70,229,.2)';
+        this.style.borderColor = 'rgba(79,70,229,.4)';
+      });
+    });
+  </script>
+</body>
+</html>
+
